@@ -96,7 +96,7 @@ const images = [
 	"images/8-2020.jpg",
 	"images/9-2021.jpg",
 	"images/10-2021.jpg",
-	"images/11-2021.jpg",
+	"images/11-2022.jpg",
 	"images/12-2022.jpg",
 	"images/13-2022.jpg",
 	"images/14-2022.jpg",
