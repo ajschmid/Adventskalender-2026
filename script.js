@@ -29,7 +29,7 @@ const scoreEl = document.getElementById("score");
 // Für den echten Betrieb: TEST_TAG = null
 // =====================================================================
 const params = new URLSearchParams(window.location.search);
-const TEST_TAG = 24;
+const TEST_TAG = null;
 const DEBUG_ALLOW_ALL = params.has("alle");
 const RESET_STORAGE_ON_START = params.has("reset");
 const CALENDAR_MONTH = 11; // 11 = Dezember (Januar = 0)
@@ -62,20 +62,19 @@ if (RESET_STORAGE_ON_START) {
 function getToday() {
 	const testDay = parseInt(params.get("tag") ?? TEST_TAG, 10);
 	if (testDay >= 1 && testDay <= 31) {
-		return new Date(new Date().getFullYear(), CALENDAR_MONTH, testDay);
+		const now = new Date();
+		return new Date(now.getFullYear(), now.getMonth(), testDay);
 	}
 	return new Date();
 }
 
 function isDoorAllowed(day) {
 	if (DEBUG_ALLOW_ALL) return true;
-	const today = getToday();
-	return today.getMonth() === CALENDAR_MONTH && today.getDate() >= day;
+	return getToday().getDate() >= day;
 }
 
 function isToday(day) {
-	const today = getToday();
-	return today.getMonth() === CALENDAR_MONTH && today.getDate() === day;
+	return getToday().getDate() === day;
 }
 
 if (DEBUG_ALLOW_ALL || params.has("tag") || TEST_TAG) {
