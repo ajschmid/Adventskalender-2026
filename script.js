@@ -29,7 +29,7 @@ const scoreEl = document.getElementById("score");
 // Für den echten Betrieb: TEST_TAG = null
 // =====================================================================
 const params = new URLSearchParams(window.location.search);
-const TEST_TAG = 10;
+const TEST_TAG = 24;
 const DEBUG_ALLOW_ALL = params.has("alle");
 const RESET_STORAGE_ON_START = params.has("reset");
 const CALENDAR_MONTH = 11; // 11 = Dezember (Januar = 0)
