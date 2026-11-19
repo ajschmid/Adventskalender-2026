@@ -415,7 +415,7 @@ images.forEach((imagePath, index) => {
 	const filename = imagePath.split("/").pop();
 	const baseName = filename.replace(/\.[^.]+$/, ""); // Endung entfernen
 	const yearPart = baseName.split("-")[1];
-	const audioPath = "audio/" + baseName + ".mp3";
+	const audioPath = "audio/" + day + ".mp3";
 
 	const card = document.createElement("button");
 	card.type = "button";
